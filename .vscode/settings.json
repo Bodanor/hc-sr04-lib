@@ -6,5 +6,11 @@
     "AVR.device.frequency": 16000000,
     "AVR.programmer.type": "arduino",
     "AVR.programmer.port": "/dev/ttyACM0",
-    "AVR.programmer.rate": 115200
+    "AVR.programmer.rate": 115200,
+    "files.associations": {
+        "hc-sr04.h": "c",
+        "timer.h": "c",
+        "utils.h": "c",
+        "string.h": "c"
+    }
 }
