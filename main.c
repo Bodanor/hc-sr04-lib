@@ -12,7 +12,7 @@ int main()
         itoa(distanceCm(), buffer);
         USART_SendStr(buffer);
         USART_Transmit('\n');
-        delayMicro(1000000);
+        delayMicro(50000);
 
     }
 

@@ -10,7 +10,7 @@ void initHcSr04(int trig, int echo, int uart_baud)
 {
     setState(trig, OUTPUT);
     setState(echo, INPUT);
-    USART_Init(BAUDRATE(uart_baud));
+    USART_Init(uart_baud);
     trig_pin = trig;
     echo_pin = echo;
     baud_speed = uart_baud;
@@ -26,6 +26,8 @@ unsigned long distanceCm(void)
     delayMicro(10);
     setState(trig_pin, LOW);
     duration = pulsePin(echo_pin, HIGH);
+    if (duration == 0)
+        USART_SendStr("0 detected !\n");
 
     distance = (duration*.0343)/2;
     return distance;
